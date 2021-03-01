@@ -1,0 +1,279 @@
+lab program 1 
+#Fahrenheit=: celcius * 9/5 + 32.
+# Celsius =: (Fahrenheit - 32) * 5/9;
+
+while True:
+    print("1: Celcius to Fahrenheit")
+    print("2:  Fahrenheit  to Celcius ")
+    ch=int(input("Enter your choice"))
+    if ch==1:
+        tmp=float(input("Enter temperature in Celcius"))
+        F=tmp * 9/5 + 32
+        print("%f Celcius = %f  Fahrenheit"%(tmp, F))
+    if  ch==2:
+         tmp=float(input("Enter temperature in Fahrenheit"))
+         c=(tmp - 32) * 5/9
+         print("%f Fahrenheit = %f  Celcius"%(tmp, c))
+    if ch>=3:
+        break;
+    
+        
+lab program 2 
+sub1=int(input("Enter marks of the first subject: "))
+sub2=int(input("Enter marks of the second subject: "))
+sub3=int(input("Enter marks of the third subject: "))
+omarks=sub1+sub2+sub3;
+mmarks=300
+print("secured marks is:",omarks)
+per=(omarks/mmarks)*100
+print("percentage of student is:",per)
+if(per>=80):
+    print("Grade: A")
+elif(per>=70 or per==60):
+    print("Grade: B")
+elif(per>=60 or per==40):
+    print("Grade: C")
+elif(per>=40):
+    print("Grade: D")
+else:
+    print("Grade: E")
+
+lab program 3
+def arect(l,b):
+	area=l*b
+	print("area of rectangle is:",area)
+	return
+def acircle(r):
+	area=3.142*r*r
+	print("area of circle is:",area)
+	return
+def asquare(s):
+	area=s*s
+	print("area of square is:",area)
+	return
+def atri(b,h):
+	area=0.5*b*h
+	print("area of traingle is:",area)
+	return
+l=int(input("enter a length"))
+b=int(input("enter a breadth"))
+r=int(input("enter a radius"))
+s=int(input("enter a side"))
+h=int(input("enter a height"))
+arect(l,b);acircle(r);asquare(s);atri(b,h)
+
+lab program4
+N=int(input("Enter the number of terms:"))
+n1=0
+n2=1
+i=2
+if N<=0:
+    print("Enter a positive integer..")
+elif N==1:
+    print("Fibonacci series up to",N,":")
+    print(n1)
+else:
+    print("Fibonacci series up to",N,":")
+    print(n1)
+    print(n2)
+while i<N:
+    n3=n1+n2
+    print(n3)
+    n1=n2
+    n2=n3
+    i=i+1
+
+lab program5
+num = int(input("Enter a number: "))
+sum = 0
+temp = num
+while temp > 0:
+   digit = temp % 10
+   sum += digit ** 3
+   temp //= 10
+if num == sum:
+   print(num,"is an Armstrong number")
+else:
+   print(num,"is not an Armstrong number")
+
+lab program 6
+r1=int(input("enter the no of rows for both matrix"))
+c1=int(input("enter the no of cols for both matrix"))
+matA=[[0 for j in range(0,c1)] for i in range(0,r1)]
+matB=[[0 for j in range(0,c1)] for i in range(0,r1)]
+result=[[0 for j in range(0,c1)] for i in range(0,r1)]
+print("enter the elements of first matrix")
+for i in range(0,r1):
+	for j in range(0,c1):
+		matA[i][j]=int(input("enter elements"))
+print("enter the elements of second matrix")
+for i in range(0,r1):
+	for j in range(0,c1):
+		matB[i][j]=int(input("enter elements"))
+for i in range(len(matA)):
+	for j in range(len(matB[0])):
+		result[i][j]=matA[i][j]+matB[i][j]
+print("resultant matrix after addition")
+for i in range(len(result)):
+	for j in range(len(result[0])):
+		print("\t",result[i][j],end=" ")
+	print()
+
+lab program 7
+r1=int(input("enter the number of rows for first matrix"))
+c1=int(input("enter the number of cols for first matrix"))
+r2=int(input("enter the number of rows for second matrix"))
+c2=int(input("enter the number of cols for second matrix"))
+if(c1!=r2):
+	print("order mismatch, multiplication is not possible")
+	exit()
+matA=[[0 for j in range(0,c1)] for i in range(0,r1)]
+matB=[[0 for j in range(0,c2)] for i in range(0,r2)]
+result=[[0 for j in range(0,c2)] for i in range(0,r1)]
+print("enter the elements of first matrix")
+for i in range(0,r1):
+	for j in range(0,c1):
+		matA[i][j]=int(input("enter elements"))
+print("enter the elements of second matrix")
+for i in range(0,r2):
+	for j in range(0,c2):
+		matB[i][j]=int(input("enter elements"))
+for i in range(len(matA)):
+	for j in range(len(matB[0])):
+		for k in range(len(matB)):
+			result[i][j]=result[i][j]+matA[i][k]*matB[k][j]
+print("resultant matrix after multiplication")
+for i in range(len(result)):
+	for j in range(len(result[0])):
+		print("\t",result[i][j],end=" ")
+	print()
+
+lab program8
+t=[]
+total=0
+t=[]
+def fact(num):
+	f=1.0
+	while(num>0):
+		f=f*num
+		num=num-1
+	return(f)
+n=int(input("enter no of terms"))
+for x in range(1,n+1):
+	terms=x/(fact(x))
+	if(x%2==0):
+		terms=-terms
+	t.append(terms)
+	total=total+terms
+print(t)
+print("the sum of series is:",total)
+
+lab program 9
+limit=int(input("enter the upperlimit"))
+c=0;
+m=2;
+while(c<limit):
+	for n in range(1,m+1):
+		a=m*m-n*n
+		b=2*m*n
+		c=m*m+n*n
+		if(c>limit):
+			break
+		if(a==0 or b==0 or c==0):
+			break
+		print(a,b,c)
+	m=m+1
+
+lab program 10
+import matplotlib.pyplot as plt
+tlist=[]
+mlist=[]
+interval=int(input("Enter interval"))
+for i in range(1,interval+1):
+    t=int(input("Enter tvalue"))
+    tlist.append(t)
+    m=60/(t+2)
+    mlist.append(m)
+print ("corresponding mass value:",m)
+plt.plot(tlist,mlist,'blue')
+plt.ylabel('Mass')
+plt.xlabel('Time')
+plt.show()
+
+
+lab program 11
+import matplotlib.pyplot as plt
+t=0
+vf=[]
+d=[]
+def velocity(invel,accel):
+    t=0
+    if(invel>=0 and accel>=0):
+        for t in range(0,10):
+            v=u+a*t
+            t+=10
+            print(v)
+            vf.append(v)
+        print(vf)
+        plt.plot(vf)
+        plt.ylabel('some numbers')
+        plt.show()
+    else:
+        print("enter positive values")
+def disttime(invel,accel):
+    if(invel>=0 and accel>=0):
+        for t in range(0,10):
+            s=(u*t+0.5*a*t*t)
+            t+=10
+            print(s)
+            d.append(s)
+        print(d)
+        plt.plot(d)
+        plt.ylabel('some numbers')
+        plt.show()
+    else:
+        print("enter positive values")
+def distvel(invel,accel):
+    if(invel>=0 and accel>=0):
+        for v in range(0,10):
+            s=(v*v-u*u)/(2*a)
+            v+=10
+            print(s)
+            d.append(s)
+        print(d)
+        plt.plot(d)
+        plt.ylabel('some numbers')
+        plt.show()
+    else:
+        print("enter positive values")
+u=int(input("enter initial velocity"))
+a=int(input("enter the accelaration"))
+while True:
+    print ("1. velocity wrt to time")
+    print ("2. distance wrt to time")
+    print ("3. distance wrt to velocity")
+    print ("4. exit")
+    ch=int(input("enter ur choice"))
+    if ch==1:velocity(u,a)
+    elif ch==2:disttime(u,a)
+    elif ch==3:distvel(u,a)
+    elif ch==4:exit(0)
+    
+                   
+lab program 12
+import matplotlib.pyplot as plt
+tlist=[]
+plist=[]
+e=1000
+inter=int(input("enter number of intervals"))
+size=int(input("enter size of each interval"))
+for i in range(0,inter):
+	t=int(i)*size
+	print(t)
+	tlist.append(t)
+	p=(15000*(1+t))/(15+e)
+	plist.append(p)
+	plt.plot(tlist,plist)
+	plt.xlabel("time")
+	plt.ylable("population")
+	plt.show()
